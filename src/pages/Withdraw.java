@@ -67,8 +67,12 @@ public class Withdraw {
                         errorText.setVisible(true);
 
                     } else {
+                        
                         Functions functions = new Functions();
                         functions.debitAccount(amountToDebit);
+                        closePage();
+                        Success success = new Success();
+
                     }
 
                 } catch (Exception amountError) {
