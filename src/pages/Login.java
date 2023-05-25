@@ -2,8 +2,6 @@ package pages;
 
 import javax.swing.*;
 
-import utils.AccountOps;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,8 +14,6 @@ public class Login {
     JTextField loginPin;
     JButton loginButton;
     JLabel errorText;
-
-    AccountOps account = new AccountOps();
 
     public void closePage() {
         loginPage.setVisible(false);
@@ -33,7 +29,7 @@ public class Login {
     }
 
     public Login() {
-        loginPage = new JFrame("Transfer Students Bank");
+        loginPage = new JFrame("TSG Bank");
         loginComponents = new JPanel();
         loginComponents.setLayout(new FlowLayout());
 

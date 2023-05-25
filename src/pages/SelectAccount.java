@@ -2,6 +2,9 @@ package pages;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import utils.Functions;
 
 public class SelectAccount {
     JFrame selectAccountPage;
@@ -9,6 +12,9 @@ public class SelectAccount {
     JLabel pageHeading;
     JButton savingsButton;
     JButton currentButton;
+
+    // Functions
+    Functions functions = new Functions();
 
     // Set window to same size as every other window
     public void initializeLayout() {
@@ -20,18 +26,44 @@ public class SelectAccount {
         selectAccountPage.setVisible(true);
     }
 
+    // Close page
+    public void closePage() {
+        selectAccountPage.setVisible(false);
+    }
+
     public SelectAccount() {
-        selectAccountPage = new JFrame("Select Account type");
+        selectAccountPage = new JFrame("TSG Bank");
+        selectAccountComponents = new JPanel();
+        selectAccountComponents.setLayout(new FlowLayout());
+
         pageHeading = new JLabel("Enter Account Type", JLabel.CENTER);
 
         savingsButton = new JButton("Savings");
         savingsButton.setPreferredSize(new Dimension(100, 34));
+        savingsButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                closePage();
+                functions.setAccountType("Savings");                
+                SelectTransaction selectTransaction = new SelectTransaction();
+            }
+        });
 
         currentButton = new JButton("Current");
         currentButton.setPreferredSize(new Dimension(100, 34));
+        currentButton.addActionListener(new ActionListener() {
 
-        selectAccountComponents = new JPanel();
-        selectAccountComponents.setLayout(new FlowLayout());
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                closePage();
+                functions.setAccountType("Current");                
+                SelectTransaction selectTransaction = new SelectTransaction();
+            }
+        });
+
+
+
         selectAccountComponents.add(savingsButton);
         selectAccountComponents.add(currentButton);
 
