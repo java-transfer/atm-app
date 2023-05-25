@@ -33,7 +33,7 @@ public class Login {
     }
 
     public Login() {
-        loginPage = new JFrame("Please Login");
+        loginPage = new JFrame("Transfer Students Bank");
         loginComponents = new JPanel();
         loginComponents.setLayout(new FlowLayout());
 
@@ -56,7 +56,7 @@ public class Login {
 
                     if (inputedPIN != 5555) {
                         errorText.setVisible(true);
-                        System.out.println("He PIN Entered");
+                        System.out.println("Incorrect PIN Entered");
                         errorText.setText("Wrong PIN Entered ");
 
                     } else {
@@ -76,7 +76,7 @@ public class Login {
         errorText.setForeground(Color.RED);
 
         // Work arround to add empty line below loginComponents
-        // To separate erroText from button row
+        // To separate errorText from button row
 
         JLabel empty_line = new JLabel("");
         empty_line.setPreferredSize(new Dimension(350, 0));

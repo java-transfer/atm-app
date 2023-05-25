@@ -21,10 +21,10 @@ public class SelectAccount {
     }
 
     public SelectAccount() {
-        selectAccountPage = new JFrame("Select account type");
+        selectAccountPage = new JFrame("Select Account type");
         pageHeading = new JLabel("Enter Account Type", JLabel.CENTER);
 
-        savingsButton = new JButton("Saving");
+        savingsButton = new JButton("Savings");
         savingsButton.setPreferredSize(new Dimension(100, 34));
 
         currentButton = new JButton("Current");
